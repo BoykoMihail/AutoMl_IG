@@ -295,15 +295,21 @@ def engineer_features(
         return new_features, uncorr_features
 
     # get transformations of initial features
-    steps = 1
+   
     if verbose > 0:
-        print("[feateng] Step 1: transformation of original features")
+        print("[feateng] Step 0: first combination of features")
+    steps = 1
     original_features = list(feature_pool.keys())
     uncorr_features = set(feature_pool.keys())
+    new_features2, temp_uncorr2 = get_feature_combinations(list(combinations(original_features, 2)))
+    if verbose > 0:
+        print("[feateng] Step 1: transformation of original features")
     temp_new, temp_uncorr = apply_transformations(original_features)
     original_features.extend(temp_new)
     uncorr_features.update(temp_uncorr)
-    steps += 1
+    uncorr_features.update(temp_uncorr2)
+    original_features.extend(new_features2)
+    steps += 2
     # get combinations of first feature set
     if steps <= max_steps:
         if verbose > 0:
@@ -347,7 +353,7 @@ def engineer_features(
     if cols:
         # check for correlated features again; this time with the start features
         corrs = dict(zip(cols, np.max(np.abs(np.dot(StandardScaler().fit_transform(df[cols]).T, StandardScaler().fit_transform(df_org))/df_org.shape[0]), axis=1)))
-        cols = [c for c in cols if corrs[c] < 0.9]
+        cols = [c for c in cols if corrs[c] < 0.5]
     cols = list(df_org.columns) + cols
     if verbose > 0:
         print("[feateng] Generated a total of %i additional features" % (len(feature_pool) - len(start_features)))

@@ -362,7 +362,7 @@ class AutoFeatModel(BaseEstimator):
                     if abs(weights[c]) < 1e-5:
                         break
                     print("%.6f * %s" % (weights[c], c))
-                print("[AutoFeat] Final score: %.4f" % model.score(X, target))
+#                print("[AutoFeat] Final score: %.4f" % model.score(X, target))
         if self.always_return_numpy:
             return df.to_numpy()
         return df
@@ -399,6 +399,7 @@ class AutoFeatModel(BaseEstimator):
         # possibly apply pi-theorem
         df = self._apply_pi_theorem(df)
         # generate engineered features
+        print("Add features:")
         print("---------")
         for ine in self.new_feat_cols_:
             print(ine)

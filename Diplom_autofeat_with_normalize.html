@@ -13154,7 +13154,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># run autofeat</span>
@@ -13199,46 +13199,123 @@ div#notebook {
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[AutoFeat] The 1 step feature engineering process could generate up to 424 features.
 [AutoFeat] With 32758 data points this new feature matrix would use about 0.06 gb of space.
+[feateng] Step 0: first combination of features
+[feateng] Generated 1326 feature combinations from 1378 original feature tuples - done.
 [feateng] Step 1: transformation of original features
 [feateng] Generated 167 transformed features from 53 original features - done.
-[feateng] Generated altogether 167 new features in 1 steps
+[feateng] Generated altogether 1545 new features in 1 steps
 [feateng] Removing correlated features, as well as additions at the highest level
-[feateng] Generated a total of 153 additional features
+[feateng] Generated a total of 1459 additional features
 [featsel] Scaling data...done.
 [featsel] Feature selection run 1/5
 [featsel] Feature selection run 2/5
 [featsel] Feature selection run 3/5
 [featsel] Feature selection run 4/5
 [featsel] Feature selection run 5/5
-[featsel] 10 features after 5 feature selection runs
-[featsel] 9 features after correlation filtering
-[featsel] 9 features after noise filtering
-9
-[AutoFeat] Computing 9 new features.
-[AutoFeat]     9/    9 new features ...done.
-[AutoFeat] Final dataframe with 9 feature columns (-44 new).
+[featsel] 133 features after 5 feature selection runs
+[featsel] 77 features after correlation filtering
+77
+[AutoFeat] Computing 77 new features.
+[AutoFeat]    77/   77 new features ...done.
+[AutoFeat] Final dataframe with 77 feature columns (24 new).
 [AutoFeat] Training final regression model.
 [AutoFeat] Trained model: largest coefficients:
-6.922566485242413
-17.119359 * x030
-2.513559 * x033
-1.716403 * Abs(x033)
-0.913085 * x036
--0.018927 * x030**3
-[AutoFeat] Final score: 0.2944
+6.30745840356955
+13.340989 * x030
+8.776615 * x031*x034
+-6.347998 * x021*x034
+1.482960 * x018*x036
+1.393288 * x033
+-0.945333 * x026*x034
+-0.755506 * x030*x047
+-0.670460 * x001*x030
+0.494421 * x033*x036
+0.177143 * x012*x033
+-0.120519 * x000*x030
+0.056776 * x017*x033
+-0.040081 * x002*x034
+Add features:
 ---------
-x030
 x033
-x030**3
-Abs(x033)
-x036
-1/x036
+x030
 1/x033
-x036**2
-x033**2
+1/x030
+x016*x035
+x030*x042
+x032*x036
+x000*x031
+x025*x035
+x015*x035
+x030*x052
+x018*x036
+x021*x034
+x026*x033
+x027*x031
+x030*x045
+x031*x034
+x001*x036
+x001*x030
+x030*x049
+x026*x036
+x012*x033
+x033*x043
+x033*x044
+x030*x035
+x027*x034
+x026*x035
+x019*x033
+x033*x052
+x033*x050
+x027*x035
+x000*x034
+x030*x044
+x001*x029
+x033*x038
+x034*x035
+x033*x048
+x030*x046
+x033*x036
+x033*x035
+x033*x047
+x031*x035
+x003*x034
+x033*x046
+x003*x035
+x033*x045
+x017*x033
+x002*x035
+x030*x047
+x030*x041
+x030*x050
+x031*x036
+x033*x051
+x000*x035
+x030*x048
+x026*x031
+x009*x033
+x033*x040
+x000*x032
+x029*x035
+x030*x043
+x002*x034
+x030*x039
+x030*x038
+x030*x051
+x026*x034
+x033*x042
+x030*x040
+x033*x039
+x001*x034
+x027*x033
+x000*x030
+x001*x035
+x030*x036
+x001*x033
+x033*x041
+x033*x049
 ---------
-[AutoFeat] Computing 9 new features.
-[AutoFeat]     9/    9 new features ...done.
+[AutoFeat] Computing 77 new features.
+[AutoFeat]    77/   77 new features ...done.
 ######## Ridge Regression without autofeat
 MSE on training data: 888.4203753388175
 MSE on test data: 761.9965000063231
@@ -13246,10 +13323,10 @@ R^2 on training data: 0.30998609695613166
 R^2 on test data: 0.3368449192985109
 -----------------------------------------
 ######## Ridge Regression with autofeat
-MSE on training data: 898.9922294907283
-MSE on test data: 779.0890125947835
-R^2 on training data: 0.3017752020371711
-R^2 on test data: 0.32196954052065874
+MSE on training data: 836.7383785676517
+MSE on test data: 693.3109408945398
+R^2 on training data: 0.3501262122653652
+R^2 on test data: 0.39662101734544886
 </pre>
 </div>
 </div>
